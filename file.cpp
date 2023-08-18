@@ -4,91 +4,93 @@
 #include <unordered_map>
 #include <sstream>
 
-// Function to save the user data to a file
-void saveData(const std::unordered_map<std::string, std::string>& users ,std::string fileName) 
+using namespace std;
+// Function to save the user data to the file
+void saveData(const unordered_map<string, string>& users ,string fileName) 
 {
-    std::ofstream file(fileName + ".txt");
+    ofstream file(fileName + ".txt");
     for (const auto& pair : users) 
     {
         file << pair.first << " " << pair.second << "\n";
     }
 }
 
-void updatePassword(std::unordered_map<std::string, std::string>& users, const std::string& username, const std::string& newPassword) 
+void updateInformation(unordered_map<string, string>& users, const string& username, const string& newPassword)
 {
     users[username] = newPassword;
     saveData(users , username);
-    std::cout << "Password updated successfully.\n";
+    cout << "Password updated successfully.\n";
+    // Not compelete
 }
 
 
-// Function to load user data from a file
-std::unordered_map<std::string, std::string> loadData(std::string fileName) 
+// Function to load user data from the file
+unordered_map<string, string> loadData(string fileName) 
 {
-    std::unordered_map<std::string, std::string> users;
-    std::ifstream file(fileName + ".txt");
-    std::string username, password;
+    unordered_map<string, string> users;
+    ifstream file(fileName + ".txt");
+    string username, password;
     
     while (file >> username >> password) 
     {
         users[username] = password;
     }
-    
+
     return users;
 }
 
 int main() 
 {
-    std::unordered_map<std::string, std::string> users;
+    unordered_map<string, string> users;
 
     while (true) 
     {
-        std::cout << "1. Sign Up\n2. Sign In\n3. Quit\n4. change\n";
+        cout << "1. Sign Up\n2. Sign In\n3. Quit\n4. change\n";
         int choice;
-        std::cin >> choice;
+        cin >> choice;
 
         if (choice == 1) 
         {
-            std::string username, password;
-            std::cout << "Enter username: ";
-            std::cin >> username;
+            string username, password;
+            cout << "Enter username: ";
+            cin >> username;
 
             if (users.find(username) != users.end()) 
             {
-                std::cout << "Username already exists.\n";
+                cout << "Username already exists.\n";
                 continue;
             }
 
-            std::cout << "Enter password: ";
-            std::cin >> password;
+            cout << "Enter password: ";
+            cin >> password;
             users[username] = password;
             saveData(users , username);
-            std::cout << "Account created successfully.\n";
+            cout << "Account created successfully.\n";
         } 
         else if (choice == 2) 
         {
-            std::string username, password;
-            std::cout << "Enter username: ";
-            std::cin >> username;
+            string username, password;
+            cout << "Enter username: ";
+            cin >> username;
 
-            std::unordered_map<std::string, std::string> users = loadData(username);
+            unordered_map<string, string> users = loadData(username);
 
             if (users.find(username) == users.end()) 
             {
-                std::cout << "Username not found.\n";
+                cout << "Username not found.\n";
                 continue;
             }
 
-            std::cout << "Enter password: ";
-            std::cin >> password;
+            cout << "Enter password: ";
+            cin >> password;
 
             if (users[username] == password) 
             {
-                std::cout << "Logged in successfully.\n";
+                cout << "Logged in successfully.\n";
             } 
             else 
             {
-                std::cout << "Incorrect password.\n";
+                cout << "Incorrect password.\n";
             }
         } 
         else if (choice == 3) 
@@ -97,23 +99,23 @@ int main()
         }
         else if (choice == 4)
         {
-            std::string username, newPassword;
-            std::cout << "Enter username: ";
-            std::cin >> username;
+            string username, newPassword;
+            cout << "Enter username: ";
+            cin >> username;
 
             if (users.find(username) == users.end()) 
             {
-                std::cout << "Username not found.\n";
+                cout << "Username not found.\n";
                 continue;
             }
 
-            std::cout << "Enter new password: ";
-            std::cin >> newPassword;
-            updatePassword(users, username, newPassword);
+            cout << "Enter new password: ";
+            cin >> newPassword;
+            updateInformation(users, username, newPassword);
         }
         else 
         {
-            std::cout << "Invalid choice.\n";
+            cout << "Invalid choice.\n";
         }
     }
 

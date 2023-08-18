@@ -1,16 +1,29 @@
 #include <iostream>
-#include <cstdlib>
+#include <windows.h>
+
+// Function to erase the input line
+void eraseInputLine() {
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    CONSOLE_SCREEN_BUFFER_INFO csbi;
+    GetConsoleScreenBufferInfo(hConsole, &csbi);
+
+    COORD startPos = { 0, csbi.dwCursorPosition.Y };
+    DWORD numCharsWritten;
+    FillConsoleOutputCharacter(hConsole, ' ', csbi.dwSize.X, startPos, &numCharsWritten);
+    SetConsoleCursorPosition(hConsole, startPos);
+}
 
 int main() {
-    // Print something on the current line
-    std::cout << "This is a test command.";
+    // Print a prompt
+    std::cout << "Enter a command: ";
 
-    // Wait for user input
-    std::cin.get();
+    // Read and erase user input
+    std::string input;
+    std::getline(std::cin, input);
+    eraseInputLine();
 
-    // Clear the last command line
-    system("read -e -p ' '");
+    // Print the cleared line
+    std::cout << "You entered: " << input << std::endl;
 
     return 0;
 }
-

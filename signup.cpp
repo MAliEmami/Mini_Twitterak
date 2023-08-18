@@ -3,12 +3,10 @@
 
 
 PersonalUser::PersonalUser() : User("Personal") {}
+
 void User::saveData(std::unordered_map<std::string, std::string>& userData) 
 {
-    userData[username] = newUser ;
-    // "Type: "       + userType +
-    // ", Username: " + username + 
-    // ", Password: " + password;
+    userData[username] = password ;
 }
 
 void PersonalUser::signUp() 
@@ -62,7 +60,6 @@ AnonymousUser::AnonymousUser() : User("Anonymous") {}
 
 void AnonymousUser::signUp() 
 {
-    // No additional fields needed for anonymous user
 }
 
 User::User(std::string _userType) : userType(_userType) {}

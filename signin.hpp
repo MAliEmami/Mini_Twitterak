@@ -1,13 +1,8 @@
-#ifndef SIGNIN_HPP
-#define SIGNIN_HPP
+#include <iostream>
+#include <vector>
+#include "functions.hpp"
+#include "twitterak.hpp"
 
-#include <string>
-#include <unordered_map>
+using namespace std;
 
-class SignIn 
-{
-public:
-    static bool login(const std::unordered_map<std::string, std::string>& userData);
-};
-
-#endif // SIGNIN_HPP
+bool login(const std::unordered_map<std::string, std::string>& userData);
