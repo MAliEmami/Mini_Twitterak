@@ -11,8 +11,8 @@ class twitterak
     public:
         void run();
         void help();
-        void signup();
-        void signin();
+        // void signup();
+        // void signin();
         // void inToApp(std::string usernameInToApp);
         // void addUser(user);
         // bool isCorrect(std::string usernameCheck, std::string passwordCheck);

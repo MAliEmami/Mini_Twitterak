@@ -10,9 +10,6 @@ using namespace std;
 
 unordered_map<std::string, std::string> userData;
 
-void displaySignupMenu(std::unordered_map<std::string, std::string>& userData);
-void displaySigninMenu(const std::unordered_map<std::string, std::string>& userData);
-
 void twitterak::run()//menu
 {
     std::cout << "-------------*Twitterak*-------------\n";
@@ -31,11 +28,11 @@ void twitterak::run()//menu
         }
         else if (command == "signup")
         {
-            signup();
+            displaySignupMenu(userData);
         }
         else if (command =="signin")
         {
-            signin();
+            displaySigninMenu(userData);
         }
         else//if command not match with menu
         {
@@ -57,27 +54,12 @@ void twitterak::help()//showing all command that user can use
     std::cout << "<exit>\n";
 }
 
-
-void twitterak::signup()//get all info from user
+void twitterak::displaySignupMenu(std::unordered_map<std::string, std::string>& userData) 
 {
     std::cout << "------------------------------------------------\n";
     std::cout << "-                   Signup                     -\n";
     std::cout << "------------------------------------------------\n";
 
-    displaySignupMenu(userData);
-}
-
-void twitterak::signin()
-{
-    std::cout << "------------------------------------------------\n";
-    std::cout << "-                   Login                      -\n";
-    std::cout << "------------------------------------------------\n";
-
-    displaySigninMenu(userData);
-}
-
-void displaySignupMenu(std::unordered_map<std::string, std::string>& userData) 
-{
     string choice;
     std::cout << "Which type of user would you Sign Up?\n";
     std::cout << "Personal\n" << "Company\n" << "Anonymous\n";
@@ -123,8 +105,12 @@ void displaySignupMenu(std::unordered_map<std::string, std::string>& userData)
     }
 }
 
-void displaySigninMenu(const std::unordered_map<std::string, std::string>& userData) 
+void twitterak::displaySigninMenu(const std::unordered_map<std::string, std::string>& userData) 
 {
+    std::cout << "------------------------------------------------\n";
+    std::cout << "-                   Login                      -\n";
+    std::cout << "------------------------------------------------\n";
+
     bool isloggedIn = login(userData);
     if (isloggedIn) 
     {

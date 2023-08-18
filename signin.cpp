@@ -1,6 +1,9 @@
 #include "signin.hpp"
 #include "twitterak.hpp"
+#include <unordered_map>
 #include <iostream>
+#include <vector>
+
 
 bool login(const std::unordered_map<std::string, std::string>& userData) 
 {

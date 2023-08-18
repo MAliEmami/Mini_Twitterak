@@ -1,6 +1,7 @@
 #include "signup.hpp"
 #include <iostream>
-
+#include <vector>
+#include <unordered_map>
 
 PersonalUser::PersonalUser() : User("Personal") {}
 
