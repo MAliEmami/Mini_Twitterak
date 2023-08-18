@@ -1,4 +1,5 @@
 #include <iostream>
+<<<<<<< HEAD
 #include <fstream>
 #include <string>
 #include <unordered_map>
@@ -43,3 +44,19 @@ int main() {
 
     // ... Previous code ...
 }
+=======
+
+using namespace std;
+
+int main()
+{
+    int i;
+    do
+    {
+        cout << "i=";
+        cin >> i;
+    } while (i!=20);
+
+    return 0;
+}
+>>>>>>> 71d7a9df48c790eefb29a8bd34b09afd64d23ef0
