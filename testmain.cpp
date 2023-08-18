@@ -17,9 +17,10 @@ void saveData(const std::unordered_map<std::string, std::string>& users ,std::st
 void updatePassword(std::unordered_map<std::string, std::string>& users, const std::string& username, const std::string& newPassword) 
 {
     users[username] = newPassword;
-    saveData(users);
+    saveData(users , username);
     std::cout << "Password updated successfully.\n";
 }
+
 
 // Function to load user data from a file
 std::unordered_map<std::string, std::string> loadData(std::string fileName) 
@@ -36,12 +37,13 @@ std::unordered_map<std::string, std::string> loadData(std::string fileName)
     return users;
 }
 
-int main() {
+int main() 
+{
     std::unordered_map<std::string, std::string> users;
 
     while (true) 
     {
-        std::cout << "1. Sign Up\n2. Sign In\n3. Quit\n4. change";
+        std::cout << "1. Sign Up\n2. Sign In\n3. Quit\n4. change\n";
         int choice;
         std::cin >> choice;
 
@@ -99,7 +101,8 @@ int main() {
             std::cout << "Enter username: ";
             std::cin >> username;
 
-            if (users.find(username) == users.end()) {
+            if (users.find(username) == users.end()) 
+            {
                 std::cout << "Username not found.\n";
                 continue;
             }

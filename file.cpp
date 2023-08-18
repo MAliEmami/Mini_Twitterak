@@ -1,79 +1,121 @@
-#include "signup.hpp"
-#include "signin.hpp"
 #include <iostream>
 #include <fstream>
 #include <string>
 #include <unordered_map>
 #include <sstream>
 
-void saveUserDataToFile(const std::unordered_map<std::string, std::string>& userData, const std::string& filename);
-void loadUserDataFromFile(std::unordered_map<std::string, std::string>& userData, const std::string& filename);
-void displaySignupMenu(std::unordered_map<std::string, std::string>& userData);
-void displaySigninMenu(const std::unordered_map<std::string, std::string>& userData);
+// Function to save the user data to a file
+void saveData(const std::unordered_map<std::string, std::string>& users ,std::string fileName) 
+{
+    std::ofstream file(fileName + ".txt");
+    for (const auto& pair : users) 
+    {
+        file << pair.first << " " << pair.second << "\n";
+    }
+}
 
-int main() {
-    std::unordered_map<std::string, std::string> userData;
+void updatePassword(std::unordered_map<std::string, std::string>& users, const std::string& username, const std::string& newPassword) 
+{
+    users[username] = newPassword;
+    saveData(users , username);
+    std::cout << "Password updated successfully.\n";
+}
 
-    // Load user data from file
-    loadUserDataFromFile(userData, "userdata.txt");
 
-    char choice;
+// Function to load user data from a file
+std::unordered_map<std::string, std::string> loadData(std::string fileName) 
+{
+    std::unordered_map<std::string, std::string> users;
+    std::ifstream file(fileName + ".txt");
+    std::string username, password;
+    
+    while (file >> username >> password) 
+    {
+        users[username] = password;
+    }
+    
+    return users;
+}
 
-    do {
-        std::cout << "=== Main Menu ===" << std::endl;
-        std::cout << "1. Sign Up" << std::endl;
-        std::cout << "2. Sign In" << std::endl;
-        std::cout << "3. Quit" << std::endl;
-        std::cout << "Enter your choice: ";
+int main() 
+{
+    std::unordered_map<std::string, std::string> users;
+
+    while (true) 
+    {
+        std::cout << "1. Sign Up\n2. Sign In\n3. Quit\n4. change\n";
+        int choice;
         std::cin >> choice;
 
-        if (choice == '1') {
-            displaySignupMenu(userData);
-        } else if (choice == '2') {
-            displaySigninMenu(userData);
-        } else if (choice == '3') {
-            // Save user data to file before quitting
-            saveUserDataToFile(userData, "userdata.txt");
-            std::cout << "Goodbye!" << std::endl;
-        } else {
-            std::cout << "Invalid choice. Please try again." << std::endl;
-        }
+        if (choice == 1) 
+        {
+            std::string username, password;
+            std::cout << "Enter username: ";
+            std::cin >> username;
 
-    } while (choice != '3');
+            if (users.find(username) != users.end()) 
+            {
+                std::cout << "Username already exists.\n";
+                continue;
+            }
+
+            std::cout << "Enter password: ";
+            std::cin >> password;
+            users[username] = password;
+            saveData(users , username);
+            std::cout << "Account created successfully.\n";
+        } 
+        else if (choice == 2) 
+        {
+            std::string username, password;
+            std::cout << "Enter username: ";
+            std::cin >> username;
+
+            std::unordered_map<std::string, std::string> users = loadData(username);
+
+            if (users.find(username) == users.end()) 
+            {
+                std::cout << "Username not found.\n";
+                continue;
+            }
+
+            std::cout << "Enter password: ";
+            std::cin >> password;
+
+            if (users[username] == password) 
+            {
+                std::cout << "Logged in successfully.\n";
+            } 
+            else 
+            {
+                std::cout << "Incorrect password.\n";
+            }
+        } 
+        else if (choice == 3) 
+        {
+            break;
+        }
+        else if (choice == 4)
+        {
+            std::string username, newPassword;
+            std::cout << "Enter username: ";
+            std::cin >> username;
+
+            if (users.find(username) == users.end()) 
+            {
+                std::cout << "Username not found.\n";
+                continue;
+            }
+
+            std::cout << "Enter new password: ";
+            std::cin >> newPassword;
+            updatePassword(users, username, newPassword);
+        }
+        else 
+        {
+            std::cout << "Invalid choice.\n";
+        }
+    }
 
     return 0;
 }
-
-void saveUserDataToFile(const std::unordered_map<std::string, std::string>& userData, const std::string& filename) {
-    std::ofstream outputFile(filename);
-    if (outputFile.is_open()) {
-        for (const auto& entry : userData) {
-            outputFile << entry.first << " " << entry.second << std::endl;
-        }
-        outputFile.close();
-    } else {
-        std::cerr << "Unable to open file for writing: " << filename << std::endl;
-    }
-}
-
-void loadUserDataFromFile(std::unordered_map<std::string, std::string>& userData, const std::string& filename) {
-    std::ifstream inputFile(filename);
-    if (inputFile.is_open()) {
-        std::string line;
-        while (std::getline(inputFile, line)) {
-            std::istringstream iss(line);
-            std::string username, data;
-            if (iss >> username) {
-                std::getline(iss, data);
-                userData[username] = data;
-            }
-
-        }
-        inputFile.close();
-    } else {
-        std::cerr << "Unable to open file for reading: " << filename << std::endl;
-    }
-}
-
-
-// The rest of the code remains the same

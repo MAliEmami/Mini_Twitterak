@@ -1,62 +1,65 @@
 #include <iostream>
-<<<<<<< HEAD
-#include <fstream>
+#include <vector>
 #include <string>
-#include <unordered_map>
+#include <sstream> // Add this include for std::istringstream
 
-// ... Previous code ...
-
-// Function to update user data in the map and the file
-void updatePassword(std::unordered_map<std::string, std::string>& users, const std::string& username, const std::string& newPassword) {
-    users[username] = newPassword;
-    saveData(users);
-    std::cout << "Password updated successfully.\n";
+void clearLastCommandLine() 
+{
+    std::cout << "\x1b[2K\r";
 }
 
+int main() 
+{
+    std::string tweet;
+    std::cout << "Enter your Tweet:";
+    std::getline(std::cin, tweet);
+    clearLastCommandLine();
+    std::cout << "@username:" << "tweet: " << tweet << '\n';
 
-int main() {
-    // ... Previous code ...
+
+    std::vector<std::string> sentences;
+    std::string input;
+
+    std::cout << "Enter sentences (type 'end' to finish):\n";
 
     while (true) {
-        std::cout << "1. Sign Up\n2. Sign In\n3. Change Password\n4. Quit\n";
-        // ... Previous code ...
+        std::getline(std::cin, input);
 
-        if (choice == 4) {
+        if (input == "end") {
             break;
-        } 
-        else if (choice == 3) {
-            std::string username, newPassword;
-            std::cout << "Enter username: ";
-            std::cin >> username;
+        }
 
-            if (users.find(username) == users.end()) {
-                std::cout << "Username not found.\n";
-                continue;
-            }
+        sentences.push_back(input);
+    }
 
-            std::cout << "Enter new password: ";
-            std::cin >> newPassword;
-            updatePassword(users, username, newPassword);
-        } else {
-            // ... Previous code ...
+    std::cout << "\nSentences entered:\n";
+    for (size_t i = 0; i < sentences.size(); ++i) {
+        std::cout << i + 1 << ". " << sentences[i] << "\n";
+    }
+
+    std::cout << "\nEnter sentence numbers to comment (separated by spaces):\n";
+
+    std::string commentInput;
+    std::getline(std::cin, commentInput);
+
+    std::vector<std::string> comments;
+    std::istringstream iss(commentInput);
+    int sentenceIndex;
+
+    while (iss >> sentenceIndex) {
+        if (sentenceIndex > 0 && sentenceIndex <= static_cast<int>(sentences.size())) 
+        {
+            comments.push_back("Commented: " + sentences[sentenceIndex - 1]);
         }
     }
 
-    // ... Previous code ...
-}
-=======
+    std::cout << "\nComments:\n";
 
-using namespace std;
-
-int main()
-{
-    int i;
-    do
+    std::cout << "@username:" << "tweet: " << tweet << '\n';            
+    for (const std::string& comment : comments) 
     {
-        cout << "i=";
-        cin >> i;
-    } while (i!=20);
+        std::cout << comment << "\n";
+    }
 
     return 0;
 }
->>>>>>> 71d7a9df48c790eefb29a8bd34b09afd64d23ef0
