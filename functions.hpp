@@ -13,4 +13,7 @@ vector <std::string> wordSeparator(std::string command);// seperate words of "ed
 
 std::string bringImportant(const std::string& command, size_t start ); //sugest to pass argument for delete
 
+bool validatePassword(const std::string& password);
+bool validateBiography(const string& paragraph);
+
 #endif

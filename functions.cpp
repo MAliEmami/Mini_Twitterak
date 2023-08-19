@@ -56,3 +56,44 @@ string bringImportant(const string& command, size_t start ) //sugest to pass arg
 
     return important ;
 }
+
+
+bool validatePassword(const string& password) 
+{
+    if (password.length() < 8) 
+    {
+        return false; 
+    }
+
+    bool hasNumber = false;
+    bool hasCharacter = false;
+    bool hasSpecial = false;
+
+    for (char c : password) 
+    {
+        if (isdigit(c)) 
+        {
+            hasNumber = true;
+        } 
+        else if (isalpha(c)) 
+        {
+            hasCharacter = true;
+        } 
+        else if (!isalnum(c)) 
+        {
+            hasSpecial = true;
+        }
+
+        if (hasNumber && hasCharacter && hasSpecial) 
+        {
+            return true;
+        }
+    }
+
+    return false; // If all three conditions aren't met
+}
+
+bool validateBiography(const string& paragraph) 
+{
+    return paragraph.length() <= 160;
+}

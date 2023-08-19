@@ -18,9 +18,15 @@ class twitterak
         // bool isCorrect(std::string usernameCheck, std::string passwordCheck);
         // //void addUser();
 
+        void displayInToAppHelpMenu();
+        void displayInToAppDeleteAccountMenu(std::string usernameInToApp);
+        void displayInToAppTweetMnue(std::string usernameInToApp);
+
+
         //bool login(const std::unordered_map<std::string, std::string>& userData);
         void displaySignupMenu(std::unordered_map<std::string, std::string>& userData);
         void displaySigninMenu(const std::unordered_map<std::string, std::string>& userData);
+
         std::unordered_map<std::string, std::string> userData;
 
 

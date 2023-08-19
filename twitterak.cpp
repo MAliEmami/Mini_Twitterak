@@ -5,6 +5,7 @@
 #include "signup.hpp"
 #include "signin.hpp"
 #include "functions.hpp"
+#include "tweet.hpp"
 
 using namespace std;
 unordered_map<string, string> userData;
@@ -149,7 +150,7 @@ void twitterak::inToApp(string usernameInToApp)//after login => user can write e
     cout << "-                  Twitterak                   -\n";
     cout << "-             *please type 'Help'*             -\n";
     cout << "------------------------------------------------\n";
-    string command = "0";
+    string command = "";
     
     while (command != "logout")
     {
@@ -162,41 +163,99 @@ void twitterak::inToApp(string usernameInToApp)//after login => user can write e
 
         if (words[0] == "help")
         {
-            cout << "------------------------------------------------\n";
-            cout << "-                   Help                       -\n";
-            cout << "------------------------------------------------\n";
-
-            cout << "<Delete Account>\n";
-            cout << "<Profile or me>\n";
-            cout << "<Edit Profile>\n";
-            cout << "<Logout>\n";
-            cout << "<Tweet>\n\n";
+            displayInToAppHelpMenu();
         }
 
-        if (command == "delete account")
+        else if (command == "delete account")
         {
-            cout << "? Are you sure?(y/n)\n";
-            string areYouSure;
-            while (1)
-            {
-                cin >> areYouSure;
-                lowerCase(areYouSure);
-                if (areYouSure == "y")
-                {
-                    userData.erase(usernameInToApp);//delete account from unordered_map
-                    cout << "! Delete account successful\n";
-                    run();
-                }
-                else if (areYouSure == "n")
-                {
-                    cout << "! Delete account was unsuccessful\n";
-                    break;
-                }
-                else
-                {
-                    cout << "! Wrong command\n";
-                }
-            }
+            displayInToAppDeleteAccountMenu(usernameInToApp);
+        }
+        else if (command == "tweet")
+        {
+            displayInToAppTweetMnue(usernameInToApp);
+        }
+
+    }
+
+}
+
+void displayInToAppHelpMenu()
+{
+    cout << "------------------------------------------------\n";
+    cout << "-                   Help                       -\n";
+    cout << "------------------------------------------------\n";
+
+    cout << "<Delete Account>\n";
+    cout << "<Profile or me>\n";
+    cout << "<Edit Profile>\n";
+    cout << "<Logout>\n";
+    cout << "<Tweet>\n\n";
+
+}
+
+void displayInToAppDeleteAccountMenu(string usernameInToApp)
+{
+    cout << "? Are you sure?(y/n)\n";
+    string areYouSure;
+    while (1)
+    {
+        cin >> areYouSure;
+        lowerCase(areYouSure);
+        if (areYouSure == "y")
+        {
+            userData.erase(usernameInToApp);//delete account from unordered_map
+            cout << "! Delete account successful\n";
+
+            cout << "here shoud compelete. its not redy!";
+            //run(); why?
+        }
+        else if (areYouSure == "n")
+        {
+            cout << "! Delete account was unsuccessful\n";
+            break;
+        }
+        else
+        {
+            cout << "! Wrong command\n";
+        }
+    }
+}
+
+void displayInToAppTweetMnue(string usernameInToApp)
+{
+    cout << "------------------------------------------------\n";
+    cout << "-                    *Tweet*                   -\n";
+    cout << "------------------------------------------------\n";
+    cout << "You can type one of these bellow command.";
+    cout << "<Tweet>" << '\n' << "<Mention>" << '\n' << "Retweet" << '\n' << "Quote Tweet" << '\n' << "Like" << '\n';
+    //should display file
+
+    unordered_map<string, string> userTweet;
+    
+    string command = "";
+    cin >> command;
+
+    while(1)
+    {
+        if (command == "tweet")
+        {
+            tweetCreator(unordered_map<string, string>& userTweet, string usernameInToApp);
+        }
+        else if (command == "mention")
+        {
+
+        }
+        else if (command == "retweet")
+        {
+
+        }
+        else if (command == "quote tweet")
+        {
+
+        }
+        else if (command == "Like")
+        {
+
         }
     }
 
