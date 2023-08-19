@@ -3,6 +3,9 @@
 #include <unordered_map>
 #include <iostream>
 #include <vector>
+#include <string>
+
+
 
 
 bool login(const std::unordered_map<std::string, std::string>& userData) 
@@ -17,10 +20,6 @@ bool login(const std::unordered_map<std::string, std::string>& userData)
 
     auto userEntry = userData.find(username);
 
-    std::cout << "userEntry: " << std::endl ;
-    std::cout << "first: " << userEntry->first << std::endl;
-    std::cout << "second: " << userEntry->second << std::endl;
-
     if (userEntry != userData.end() && userEntry->second == password) 
     {
         std::cout << "Login successful!" << std::endl;
@@ -32,3 +31,5 @@ bool login(const std::unordered_map<std::string, std::string>& userData)
         return false;
     }
 }
+
+
