@@ -7,10 +7,10 @@
 
 using namespace std ;
 
-void lowerCase(string &str);// every command should be lowercase
+void lowerCase(std::string &str);// every command should be lowercase
 
-vector <string> wordSeparator(string command);// seperate words of "edit" command
+vector <std::string> wordSeparator(std::string command);// seperate words of "edit" command
 
-string bringImportant(const string& command, size_t start ); //sugest to pass argument for delete
+std::string bringImportant(const std::string& command, size_t start ); //sugest to pass argument for delete
 
 #endif

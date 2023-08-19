@@ -8,26 +8,26 @@
 
 
 
-bool login(const std::unordered_map<std::string, std::string>& userData) 
+bool login(const unordered_map<string, string>& userData) 
 {
-    std::string username, password;
+    string username, password;
 
-    std::cout << "Username: ";
-    std::cin >> username;
+    cout << "Username: ";
+    cin >> username;
 
-    std::cout << "Password: ";
-    std::cin >> password;
+    cout << "Password: ";
+    cin >> password;
 
     auto userEntry = userData.find(username);
 
     if (userEntry != userData.end() && userEntry->second == password) 
     {
-        std::cout << "Login successful!" << std::endl;
+        cout << "Login successful!" << endl;
         return true;
     } 
     else 
     {
-        std::cout << "Login failed. Invalid username or password." << std::endl;
+        cout << "Login failed. Invalid username or password." << endl;
         return false;
     }
 }
