@@ -15,5 +15,7 @@ std::string bringImportant(const std::string& command, size_t start ); //sugest 
 
 bool validatePassword(const std::string& password);
 bool validateBiography(const string& paragraph);
+bool validateUsername(const std::string& input); 
+
 
 #endif

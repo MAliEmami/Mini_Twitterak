@@ -1,5 +1,7 @@
 #include <iostream>
 #include <vector>
+#include <cctype>
+#include <unordered_set>
 #include "functions.hpp"
 #include "twitterak.hpp"
 
@@ -96,4 +98,28 @@ bool validatePassword(const string& password)
 bool validateBiography(const string& paragraph) 
 {
     return paragraph.length() <= 160;
+}
+
+bool validateUsername(const std::string& input) 
+{
+    static const std::unordered_set<std::string> 
+    invalidWords = {"tweet"    , "signin"  , "signup"      , "logout" , "quit" ,
+                    "personal" , "company" , "Anonymous"   , "logout" , "help" ,
+                    "mention"  , "retweet" , "quote tweet" , "Like"   , "exit" , 
+                    "delete account"};
+    
+    if (input.size() < 5 || !std::isalpha(input[0])) 
+    {
+        return false;
+    }
+
+    for (char c : input) 
+    {
+        if (c == '@' || !std::isalnum(c)) 
+        {
+            return false;
+        }
+    }
+    
+    return invalidWords.find(input) == invalidWords.end();
 }
