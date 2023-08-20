@@ -100,7 +100,15 @@ void twitterak::displaySignupMenu(unordered_map<string, string>& userData)
 
         cout << "Username: ";
         cin.ignore();
-        getline(cin, newUser->username);
+        while(1)// i dont test!!
+        {
+            getline(cin, newUser->username);
+            if (userData.find(newUser->username) != userData.end()) 
+            {
+                cout << "Username already exists.\n";
+                continue;
+            }
+        }
 
         cout << "Password: ";
         cin >> newUser->password;
@@ -127,6 +135,8 @@ void twitterak::displaySigninMenu(const unordered_map<string, string>& userData)
         cout << "Password: ";
         cin >> password;
 
+        unordered_map<string, string> users = loadData(username);// dont test
+
         auto userEntry = userData.find(username);
 
         if (userEntry != userData.end() && userEntry->second == password) 
@@ -138,7 +148,7 @@ void twitterak::displaySigninMenu(const unordered_map<string, string>& userData)
         else 
         {
             cout << "Login failed. Invalid username or password.\n";
-            cout << "Try Again\n";
+            run();
         }
     }
 }

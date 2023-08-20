@@ -20,7 +20,8 @@ void tweetCreator(unordered_map<string, string>& userTweet, string username)
     int tweetNumber = count(userTweet[username].begin(), userTweet[username].end(), '\n') + 1;
     userTweet[username] += (to_string(tweetNumber) + ". " + tweet + "\n");
 
-    for (const auto& pair : userTweet) {
+    for (const auto& pair : userTweet) 
+    {
         cout << pair.first << " tweet: \n" << pair.second << "\n";
     }
 }

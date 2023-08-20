@@ -2,6 +2,8 @@
 #include <vector>
 #include <cctype>
 #include <unordered_set>
+#include <fstream>
+#include <sstream>
 #include "functions.hpp"
 #include "twitterak.hpp"
 
@@ -122,4 +124,38 @@ bool validateUsername(const std::string& input)
     }
     
     return invalidWords.find(input) == invalidWords.end();
+}
+
+// save the users data to file
+void saveData(const unordered_map<string, string>& users ,string fileName) 
+{
+    ofstream file(fileName + ".txt");
+    for (const auto& pair : users) 
+    {
+        file << pair.first << " " << pair.second << "\n";
+    }
+}
+
+void updateInformation(unordered_map<string, string>& users, const string& username, const string& newPassword)
+{
+    users[username] = newPassword;
+    saveData(users , username);
+    cout << "Password updated successfully.\n";
+    // Not compelete
+}
+
+
+// load users data from file
+unordered_map<string, string> loadData(string fileName) 
+{
+    unordered_map<string, string> users;
+    ifstream file(fileName + ".txt");
+    string username, password;
+    
+    while (file >> username >> password) 
+    {
+        users[username] = password;
+    }
+
+    return users;
 }
