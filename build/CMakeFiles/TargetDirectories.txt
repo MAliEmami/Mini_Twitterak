@@ -1,0 +1,3 @@
+D:/lessons/Project/Final/Twitterak_Final/build/CMakeFiles/app.dir
+D:/lessons/Project/Final/Twitterak_Final/build/CMakeFiles/edit_cache.dir
+D:/lessons/Project/Final/Twitterak_Final/build/CMakeFiles/rebuild_cache.dir

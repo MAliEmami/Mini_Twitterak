@@ -8,6 +8,7 @@
 #include "tweet.hpp"
 
 using namespace std;
+
 unordered_map<string, string> userData;
 
 void twitterak::run()//menu
@@ -42,7 +43,7 @@ void twitterak::run()//menu
 }
 
 
-void twitterak:: displayHelpMenu()//showing all command that user can use
+void twitterak::displayHelpMenu()//showing all command that user can use
 {
     cout << "------------------------------------------------\n";
     cout << "-                   Help                       -\n";
@@ -65,11 +66,12 @@ void twitterak::displaySignupMenu(unordered_map<string, string>& userData)
     cout << "Personal\n" << "Company\n" << "Anonymous\n\n";
     //cout << "If you want to go back write Back\n";
 
-    cin >> choice;
-
     User* newUser = nullptr;
     while(1)
     {
+        cout << "> ";
+        cin >> choice;
+
         if (choice == "personal") 
         {
             newUser = new PersonalUser();
@@ -89,9 +91,7 @@ void twitterak::displaySignupMenu(unordered_map<string, string>& userData)
         {
             cout << "Invalid choice. Please try again." << endl;
         }
-
     }
-
     if (newUser) 
     {
         cout << "------------------------------------------------\n";
@@ -99,14 +99,16 @@ void twitterak::displaySignupMenu(unordered_map<string, string>& userData)
         cout << "------------------------------------------------\n";
 
         cout << "Username: ";
-        cin.ignore();
         while(1)// i dont test!!
         {
-            getline(cin, newUser->username);
+            cin >> newUser->username;
             if (userData.find(newUser->username) != userData.end()) 
             {
                 cout << "Username already exists.\n";
-                continue;
+            }
+            else
+            {
+                break;
             }
         }
 
@@ -120,7 +122,7 @@ void twitterak::displaySignupMenu(unordered_map<string, string>& userData)
     run();
 }
 
-void twitterak::displaySigninMenu(const unordered_map<string, string>& userData) 
+void twitterak::displaySigninMenu(unordered_map<string, string>& userData) 
 {
     cout << "------------------------------------------------\n";
     cout << "-                   Login                      -\n";
@@ -135,7 +137,7 @@ void twitterak::displaySigninMenu(const unordered_map<string, string>& userData)
         cout << "Password: ";
         cin >> password;
 
-        unordered_map<string, string> users = loadData(username);// dont test
+        unordered_map<string, string> userData = loadData(username);// dont test
 
         auto userEntry = userData.find(username);
 
@@ -169,14 +171,14 @@ void twitterak::inToApp(string usernameInToApp)//after login => user can write e
         getline(cin, command);
         lowerCase(command);//string should be lowercase
         
-        vector<string> words = wordSeparator(command);
+        //vector<string> words = wordSeparator(command);
 
-        if (words[0] == "help")
-        {
-            displayInToAppHelpMenu();
-        }
+        // if (words[0] == "help")
+        // {
+        //     displayInToAppHelpMenu();
+        // }
 
-        else if (command == "delete account")
+        if (command == "delete account")
         {
             displayInToAppDeleteAccountMenu(usernameInToApp);
         }
@@ -189,7 +191,7 @@ void twitterak::inToApp(string usernameInToApp)//after login => user can write e
 
 }
 
-void displayInToAppHelpMenu()
+void twitterak::displayInToAppHelpMenu()
 {
     cout << "------------------------------------------------\n";
     cout << "-                   Help                       -\n";
@@ -203,7 +205,7 @@ void displayInToAppHelpMenu()
 
 }
 
-void displayInToAppDeleteAccountMenu(string usernameInToApp)
+void twitterak::displayInToAppDeleteAccountMenu(string usernameInToApp)
 {
     cout << "? Are you sure?(y/n)\n";
     string areYouSure;
@@ -231,7 +233,7 @@ void displayInToAppDeleteAccountMenu(string usernameInToApp)
     }
 }
 
-void displayInToAppTweetMnue(string usernameInToApp)
+void twitterak::displayInToAppTweetMnue(string usernameInToApp)
 {
     cout << "------------------------------------------------\n";
     cout << "-                    *Tweet*                   -\n";
@@ -240,7 +242,7 @@ void displayInToAppTweetMnue(string usernameInToApp)
     cout << "<Tweet>" << '\n' << "<Mention>" << '\n' << "Retweet" << '\n' << "Quote Tweet" << '\n' << "Like" << '\n';
     //should display file
 
-    unordered_map<string, string> userTweet;
+    //unordered_map<string, string> userTweet;
     
     string command = "";
     cin >> command;
@@ -249,7 +251,7 @@ void displayInToAppTweetMnue(string usernameInToApp)
     {
         if (command == "tweet")
         {
-            tweetCreator(unordered_map<string, string>& userTweet, string usernameInToApp);
+            //tweetCreator(unordered_map<string, string>& userTweet, string usernameInToApp);
         }
         else if (command == "mention")
         {

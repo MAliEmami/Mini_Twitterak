@@ -10,9 +10,10 @@ class twitterak
 {
     public:
         void run();
-        void  displayHelpMenu();
-        // void signup();
-        // void signin();
+        void displayHelpMenu();
+        void displaySignupMenu(std::unordered_map<std::string, std::string>& userData);
+        void displaySigninMenu(std::unordered_map<std::string, std::string>& userData);
+
         void inToApp(std::string usernameInToApp);
         // void addUser(user);
         // bool isCorrect(std::string usernameCheck, std::string passwordCheck);
@@ -24,8 +25,6 @@ class twitterak
 
 
         //bool login(const std::unordered_map<std::string, std::string>& userData);
-        void displaySignupMenu(std::unordered_map<std::string, std::string>& userData);
-        void displaySigninMenu(const std::unordered_map<std::string, std::string>& userData);
 
         std::unordered_map<std::string, std::string> userData;
 
