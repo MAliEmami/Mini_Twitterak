@@ -1,12 +1,8 @@
 #include "signin.hpp"
-#include "twitterak.hpp"
 #include <unordered_map>
 #include <iostream>
 #include <vector>
 #include <string>
-
-
-
 
 bool login(const unordered_map<string, string>& userData) 
 {
@@ -22,12 +18,12 @@ bool login(const unordered_map<string, string>& userData)
 
     if (userEntry != userData.end() && userEntry->second == password) 
     {
-        cout << "Login successful!" << endl;
+        cout << "* Login successful!" << endl;
         return true;
     } 
     else 
     {
-        cout << "Login failed. Invalid username or password." << endl;
+        cout << "! Login failed. Invalid username or password." << endl;
         return false;
     }
 }

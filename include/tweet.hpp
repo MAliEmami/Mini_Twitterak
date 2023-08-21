@@ -10,13 +10,15 @@
 #include "functions.hpp"
 #include <algorithm>
 
-// void displayTweetMnue();
+class tweet
+{
+    public:
 
-std::unordered_map<std::string, std::string> userTweet;
+    unordered_map<std::string, std::string> userTweet;
 
-void tweetCreator(std::string tweet, std::string username);
+    void tweetCreator(std::string tweet, std::string username);
 
-
+};
 
 
 #endif // !TWEET_HPP

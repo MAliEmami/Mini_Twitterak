@@ -1,22 +1,21 @@
 #include <iostream>
 #include <string>
+#include <fstream>
+#include <sstream>
 #include <unordered_map>
 #include "twitterak.hpp"
 #include "signup.hpp"
 #include "signin.hpp"
+#include "tweet.hpp"
 #include "functions.hpp"
-// #include "tweet.hpp"
-#include "sha256.h"
-#include <fstream>
-#include <sstream>
+#include <iomanip>
+#include <openssl/sha.h>
 
 using namespace std;
 
-// unordered_map<string, string> userData;
-
 void twitterak::run()//menu
 {
-    unordered_map<string, string> userData;
+    unordered_map<string, string> userData;// save user information to map 
 
     cout << "------------------*Twitterak*-------------------\n";
     cout << "-                  *Welcome*                   -\n";
@@ -27,7 +26,7 @@ void twitterak::run()//menu
     {
         cout << "> ";
         cin >> command;
-        lowerCase(command);//string should be lowercase
+        lowerCase(command); // string should be lowercase
         if (command == "help")
         {
             displayHelpMenu();
@@ -53,7 +52,7 @@ void twitterak::run()//menu
 }
 
 
-void twitterak::displayHelpMenu()//showing all command that user can use
+void twitterak::displayHelpMenu()// showing all command that user can use
 {
     cout << "------------------------------------------------\n";
     cout << "-                   Help                       -\n";
@@ -75,9 +74,8 @@ void twitterak::displaySignupMenu(unordered_map<string, string>& userData)
     string choice;
     cout << "Which type of user would you Sign Up?\n";
     cout << "Personal\n" << "Company\n" << "Anonymous\n\n";
-    //cout << "If you want to go back write Back\n";
 
-    User* newUser = nullptr;
+    User* newUser = nullptr; //  initializes a pointer to a user object with a null value
     while(1)
     {
         cout << "> ";
@@ -85,17 +83,17 @@ void twitterak::displaySignupMenu(unordered_map<string, string>& userData)
 
         if (choice == "personal") 
         {
-            newUser = new PersonalUser();
+            newUser = new PersonalUser(); // signup with personal user
             break;
         } 
         else if (choice == "company") 
         {
-            newUser = new CompanyUser();
+            newUser = new CompanyUser(); // signup with company user
             break;
         } 
         else if (choice == "Anonymous") 
         {
-            newUser = new AnonymousUser();
+            newUser = new AnonymousUser(); // signup with anonymous user
             break;
         } 
         else 
@@ -110,16 +108,16 @@ void twitterak::displaySignupMenu(unordered_map<string, string>& userData)
         cout << "------------------------------------------------\n";
 
         cout << "Username: ";
-        while(1)// i dont test!!
+        while(1)
         {
             cin >> newUser->username;
-            if (newUser->username[0] != '@')
+            if (newUser->username[0] != '@') // add @ if user dont add
             {
                 newUser->username = '@' + newUser->username;
             }
-            if (userData.find(newUser->username) != userData.end()) 
+            if (userData.find(newUser->username) != userData.end()) // error for if user chose a username that is exists in the files 
             {
-                cout << "Username already exists.\n";
+                cout << "! Username already exists.\n";
             }
             else
             {
@@ -128,15 +126,16 @@ void twitterak::displaySignupMenu(unordered_map<string, string>& userData)
         }
 
         cout << "Password: ";
-        // SHA256 sha256;
-        // cout << sha256("mahdi");
         cin >> newUser->password;
-        newUser->saveData(userData);
-        newUser->saveDataToFile(userData , newUser->username);
-        newUser->signUp();
-        delete newUser;
+        
+        newUser->password = encryptPassword(newUser->password);
+
+        newUser->saveData(userData); // save user to map
+        newUser->saveDataToFile(userData , newUser->username); // save user to file
+        newUser->signUp(); // user will be sign up
+        delete newUser; // free the memory allocated
     }
-    displaySigninMenu(userData);
+    displaySigninMenu(userData); // go to login to app
 }
 
 void twitterak::displaySigninMenu(unordered_map<string, string>& userData)
@@ -151,7 +150,7 @@ void twitterak::displaySigninMenu(unordered_map<string, string>& userData)
     {
         cout << "Username: ";
         cin >> username;
-        if (username[0] != '@')
+        if (username[0] != '@') // if user not have @ in first index its will add
         {
             username = '@' + username;
         }
@@ -159,11 +158,11 @@ void twitterak::displaySigninMenu(unordered_map<string, string>& userData)
         cout << "Password: ";
         cin >> password;
 
-        unordered_map<string, string> userData = loadData(username);// dont test
+        unordered_map<string, string> userData = loadData(username); // load data from file to map
 
         auto userEntry = userData.find(username);
 
-        if (userEntry != userData.end() && userEntry->second == password) 
+        if (userEntry != userData.end() && userEntry->second == encryptPassword(password)) // validation to login in to app
         {
             cout << "Login successful!\n";
             cout << "Welcome to the program\n";
@@ -172,7 +171,7 @@ void twitterak::displaySigninMenu(unordered_map<string, string>& userData)
         } 
         else 
         {
-            cout << "Login failed. Invalid username or password.\n";
+            cout << "! Login failed. Invalid username or password.\n";
             run();
         }
     }
@@ -196,9 +195,8 @@ void twitterak::inToApp(string usernameInToApp)//after login => user can write e
         // getline(cin, command);
         // cin.ignore();
         cin >> command;
-        lowerCase(command);//string should be lowercase
+        lowerCase(command); // string should be lowercase
         
-        //vector<string> words = wordSeparator(command);
 
         if (command == "help")
         {
@@ -241,11 +239,11 @@ void twitterak::displayInToAppDeleteAccountMenu(string usernameInToApp)
         lowerCase(areYouSure);
         if (areYouSure == "y")
         {
-            userData.erase(usernameInToApp);//delete account from unordered_map
+            userData.erase(usernameInToApp); // delete account from unordered_map
             cout << "! Delete account successful\n";
 
             cout << "here shoud compelete. its not redy!";
-            //run(); why?
+            run();
         }
         else if (areYouSure == "n")
         {
@@ -265,7 +263,7 @@ void twitterak::displayInToAppTweetMnue(string usernameInToApp)
     cout << "-                    *Tweet*                   -\n";
     cout << "------------------------------------------------\n";
     cout << "You can type one of these bellow command.";
-    cout << '\n' << "<Tweet>" << '\n' << "<Retweet>" << '\n' << "Quote Tweet" << '\n' /*<< "Like" << '\n' << "<Mention>"*/ ;
+    cout << '\n' << "<Tweet>" << '\n' << "<Retweet>" << '\n' << "Quote Tweet" << '\n';
     //should display file
 
     
@@ -284,7 +282,7 @@ void twitterak::displayInToAppTweetMnue(string usernameInToApp)
         }
         else if (command == "quote tweet")
         {
-
+            
         }
         else if (command == "retweet")
         {
@@ -301,3 +299,4 @@ void twitterak::displayInToAppTweetMnue(string usernameInToApp)
     }
 
 }
+

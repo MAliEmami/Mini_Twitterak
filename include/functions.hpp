@@ -7,22 +7,20 @@
 
 using namespace std;
 
-void lowerCase(std::string &str);// every command should be lowercase
+void lowerCase(std::string &str); // a function to convert every comand to lowercase
 
-vector <std::string> wordSeparator(std::string command);// seperate words of "edit" command
+bool validatePassword(const std::string& password); // password validation
+bool validateBiography(const string& paragraph); // bio validation
+bool validateUsername(const std::string& input);  // username validation
 
-std::string bringImportant(const std::string& command, size_t start ); //sugest to pass argument for delete
+std::string encryptPassword(std::string& password);
 
-bool validatePassword(const std::string& password);
-bool validateBiography(const string& paragraph);
-bool validateUsername(const std::string& input); 
+std::unordered_map<std::string, std::string> loadData(std::string& fileName);
 
-void updateInformation(unordered_map<string, string>& users, const string& username, const string& newPassword);
+// vector <std::string> wordSeparator(std::string command);// seperate words of "edit" command
+//void updateInformation(unordered_map<string, string>& users, const string& username, const string& newPassword);
 //void saveDataToFile(const unordered_map<string, string>& users ,string fileName);
-unordered_map<string, string> loadData(string fileName);// i dont know
-
-
-
+//unordered_map<string, string> loadData(string fileName);// i dont know
 
 
 

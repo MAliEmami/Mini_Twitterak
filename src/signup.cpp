@@ -1,5 +1,4 @@
 #include "signup.hpp"
-#include "tweet.hpp"
 #include <iostream>
 #include <vector>
 #include <unordered_map>
@@ -9,85 +8,74 @@
 
 using namespace std;
 
-PersonalUser::PersonalUser() : User("Personal") {}
+PersonalUser::PersonalUser() : User("Personal") {} // personal user type
 
-void User::saveData(unordered_map<string, string>& userData) 
+void User::saveData(unordered_map<string, string>& userData)// save user to map ==> key=username , value = password
 {
     userData[username] = password ;
 }
 
-// save the users data to file
+// save the user data to file
 void User::saveDataToFile(unordered_map<string, string>& userDate ,string fileName) 
 {
-    ofstream file(fileName + ".txt");
+    ofstream file(fileName + ".txt"); // i have (username of that user).txt
     for (const auto& pair : userDate) 
     {
         file << pair.first << " " << pair.second << "\n";
     }
 }
 
-// unordered_map<string, string> loadData(string fileName) 
-// {
-//     unordered_map<string, string> userDate;
-//     ifstream file(fileName + ".txt");
-//     string username, password;
-    
-//     while (file >> username >> password) 
-//     {
-//         userDate[username] = password;
-//     }
 
-//     return userDate;
+
+// void User::saveAllDataToFile(unordered_map<string, string>& userAllData ,string fileName) 
+// {
+//     ofstream file("all" + fileName + ".txt");
+//     for (const auto& pair : userAllData) 
+//     {
+//         file << pair.first << " " << pair.second << "\n";
+//     }
 // }
 
-void PersonalUser::signUp() 
+
+void PersonalUser::signUp()  // get informations "personal"
 {
     cout << "Name: ";
-    cin.ignore();
-    getline(cin, name);
+    cin >> name;
 
     cout << "Number: ";
     cin >> number;
 
     cout << "Country: ";
-    cin.ignore();
-    getline(cin, country);
+    cin >> country;
 
     cout << "Birthday: ";
-    cin.ignore();
-    getline(cin, birthday);
+    cin >> birthday;
 
     cout << "Link: ";
-    cin.ignore();
-    getline(cin, link);
-
+    cin >> link;
+    
     cout << "Biography: ";
-    cin.ignore();
-    getline(cin, biography);
+    cin >> biography;
 }
 
-CompanyUser::CompanyUser() : User("Company") {}
+CompanyUser::CompanyUser() : User("Company") {} // personal usr type
 
-void CompanyUser::signUp() 
+void CompanyUser::signUp() // get informations "personal"
 {
     cout << "Company Name: ";
-    cin.ignore();
-    getline(cin, companyName);
+    cin >> companyName;
 
     cout << "Country: ";
-    cin.ignore();
-    getline(cin, country);
+    cin >> country;
 
     cout << "Link: ";
-    cin.ignore();
-    getline(cin, link);
+    cin >> link;
 
     cout << "Biography: ";
-    cin.ignore();
-    getline(cin, biography);
+    cin >> biography;
 }
 
-AnonymousUser::AnonymousUser() : User("Anonymous") {}
+AnonymousUser::AnonymousUser() : User("Anonymous") {} // anonymous usr type
 
 void AnonymousUser::signUp() 
 {
