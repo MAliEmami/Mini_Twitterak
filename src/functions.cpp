@@ -127,22 +127,22 @@ bool validateUsername(const std::string& input)
 }
 
 // save the users data to file
-void saveData(const unordered_map<string, string>& users ,string fileName) 
-{
-    ofstream file(fileName + ".txt");
-    for (const auto& pair : users) 
-    {
-        file << pair.first << " " << pair.second << "\n";
-    }
-}
+// void saveDataToFile(const unordered_map<string, string>& users ,string fileName) 
+// {
+//     ofstream file(fileName + ".txt");
+//     for (const auto& pair : users) 
+//     {
+//         file << pair.first << " " << pair.second << "\n";
+//     }
+// }
 
-void updateInformation(unordered_map<string, string>& users, const string& username, const string& newPassword)
-{
-    users[username] = newPassword;
-    saveData(users , username);
-    cout << "Password updated successfully.\n";
-    // Not compelete
-}
+// void updateInformation(unordered_map<string, string>& users, const string& username, const string& newPassword)
+// {
+//     users[username] = newPassword;
+//     saveDataToFile(users , username);
+//     cout << "Password updated successfully.\n";
+//     // Not compelete
+// }
 
 
 // load users data from file

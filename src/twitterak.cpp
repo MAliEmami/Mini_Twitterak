@@ -6,19 +6,24 @@
 #include "signin.hpp"
 #include "functions.hpp"
 #include "tweet.hpp"
+#include "sha256.h"
+#include <fstream>
+#include <sstream>
 
 using namespace std;
 
-unordered_map<string, string> userData;
+// unordered_map<string, string> userData;
 
 void twitterak::run()//menu
 {
+    unordered_map<string, string> userData;
+
     cout << "------------------*Twitterak*-------------------\n";
     cout << "-                  *Welcome*                   -\n";
     cout << "-             *please type 'Help'*             -\n";
     cout << "------------------------------------------------\n";
     string command = "";
-    while (command != "exit" || command != "quit" || command != "q")
+    while (1)
     {
         cout << "> ";
         cin >> command;
@@ -35,7 +40,12 @@ void twitterak::run()//menu
         {
             displaySigninMenu(userData);
         }
-        else//if command not match with menu
+        else if(command == "exit" || command == "quit" || command == "q")
+        {
+            cout << "Goodbye";
+            break;
+        }
+        else // if command not match with menu
         {
             cout << "! Wrong command.\n";
         }
@@ -57,6 +67,7 @@ void twitterak::displayHelpMenu()//showing all command that user can use
 
 void twitterak::displaySignupMenu(unordered_map<string, string>& userData) 
 {
+
     cout << "------------------------------------------------\n";
     cout << "-                   Signup                     -\n";
     cout << "------------------------------------------------\n";
@@ -102,6 +113,10 @@ void twitterak::displaySignupMenu(unordered_map<string, string>& userData)
         while(1)// i dont test!!
         {
             cin >> newUser->username;
+            if (newUser->username[0] != '@')
+            {
+                newUser->username = '@' + newUser->username;
+            }
             if (userData.find(newUser->username) != userData.end()) 
             {
                 cout << "Username already exists.\n";
@@ -113,17 +128,20 @@ void twitterak::displaySignupMenu(unordered_map<string, string>& userData)
         }
 
         cout << "Password: ";
+        // SHA256 sha256;
+        // cout << sha256("mahdi");
         cin >> newUser->password;
-
-        newUser->signUp();
         newUser->saveData(userData);
+        newUser->saveDataToFile(userData , newUser->username);
+        newUser->signUp();
         delete newUser;
     }
-    run();
+    displaySigninMenu(userData);
 }
 
-void twitterak::displaySigninMenu(unordered_map<string, string>& userData) 
+void twitterak::displaySigninMenu(unordered_map<string, string>& userData)
 {
+
     cout << "------------------------------------------------\n";
     cout << "-                   Login                      -\n";
     cout << "------------------------------------------------\n";
@@ -133,6 +151,10 @@ void twitterak::displaySigninMenu(unordered_map<string, string>& userData)
     {
         cout << "Username: ";
         cin >> username;
+        if (username[0] != '@')
+        {
+            username = '@' + username;
+        }
 
         cout << "Password: ";
         cin >> password;
@@ -146,6 +168,7 @@ void twitterak::displaySigninMenu(unordered_map<string, string>& userData)
             cout << "Login successful!\n";
             cout << "Welcome to the program\n";
             inToApp(username);
+            break;
         } 
         else 
         {
@@ -167,16 +190,20 @@ void twitterak::inToApp(string usernameInToApp)//after login => user can write e
     while (command != "logout")
     {
         bool canIGoTo = false;
-        cout << "> " << usernameInToApp << "> ";
-        getline(cin, command);
+        cout << "> ";
+        cout << usernameInToApp << '\n'; 
+        cout << "> ";
+        // getline(cin, command);
+        // cin.ignore();
+        cin >> command;
         lowerCase(command);//string should be lowercase
         
         //vector<string> words = wordSeparator(command);
 
-        // if (words[0] == "help")
-        // {
-        //     displayInToAppHelpMenu();
-        // }
+        if (command == "help")
+        {
+            displayInToAppHelpMenu();
+        }
 
         if (command == "delete account")
         {
@@ -188,7 +215,6 @@ void twitterak::inToApp(string usernameInToApp)//after login => user can write e
         }
 
     }
-
 }
 
 void twitterak::displayInToAppHelpMenu()
@@ -197,9 +223,9 @@ void twitterak::displayInToAppHelpMenu()
     cout << "-                   Help                       -\n";
     cout << "------------------------------------------------\n";
 
-    cout << "<Delete Account>\n";
-    cout << "<Profile or me>\n";
-    cout << "<Edit Profile>\n";
+    //cout << "<Delete Account>\n";
+    //cout << "<Profile or me>\n";
+    //cout << "<Edit Profile>\n";
     cout << "<Logout>\n";
     cout << "<Tweet>\n\n";
 
@@ -239,7 +265,7 @@ void twitterak::displayInToAppTweetMnue(string usernameInToApp)
     cout << "-                    *Tweet*                   -\n";
     cout << "------------------------------------------------\n";
     cout << "You can type one of these bellow command.";
-    cout << "<Tweet>" << '\n' << "<Mention>" << '\n' << "Retweet" << '\n' << "Quote Tweet" << '\n' << "Like" << '\n';
+    cout << '\n' << "<Tweet>" << '\n' << "<Retweet>" << '\n' << "Quote Tweet" << '\n' /*<< "Like" << '\n' << "<Mention>"*/ ;
     //should display file
 
     //unordered_map<string, string> userTweet;
@@ -253,7 +279,7 @@ void twitterak::displayInToAppTweetMnue(string usernameInToApp)
         {
             //tweetCreator(unordered_map<string, string>& userTweet, string usernameInToApp);
         }
-        else if (command == "mention")
+        else if (command == "quote tweet")
         {
 
         }
@@ -261,14 +287,14 @@ void twitterak::displayInToAppTweetMnue(string usernameInToApp)
         {
 
         }
-        else if (command == "quote tweet")
-        {
+        // else if (command == "mention")
+        // {
 
-        }
-        else if (command == "Like")
-        {
+        // }
+        // else if (command == "Like")
+        // {
 
-        }
+        // }
     }
 
 }

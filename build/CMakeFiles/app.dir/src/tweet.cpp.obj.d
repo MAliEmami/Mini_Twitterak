@@ -150,6 +150,13 @@ CMakeFiles/app.dir/src/tweet.cpp.obj: \
  C:/msys64/mingw64/include/c++/12.2.0/bits/stl_vector.h \
  C:/msys64/mingw64/include/c++/12.2.0/bits/stl_bvector.h \
  C:/msys64/mingw64/include/c++/12.2.0/bits/vector.tcc \
+ C:/msys64/mingw64/include/c++/12.2.0/fstream \
+ C:/msys64/mingw64/include/c++/12.2.0/bits/codecvt.h \
+ C:/msys64/mingw64/include/c++/12.2.0/x86_64-w64-mingw32/bits/basic_file.h \
+ C:/msys64/mingw64/include/c++/12.2.0/x86_64-w64-mingw32/bits/c++io.h \
+ C:/msys64/mingw64/include/c++/12.2.0/bits/fstream.tcc \
+ C:/msys64/mingw64/include/c++/12.2.0/sstream \
+ C:/msys64/mingw64/include/c++/12.2.0/bits/sstream.tcc \
  D:/lessons/Project/Final/Twitterak_Final/include/signin.hpp \
  D:/lessons/Project/Final/Twitterak_Final/include/functions.hpp \
  D:/lessons/Project/Final/Twitterak_Final/include/signup.hpp \

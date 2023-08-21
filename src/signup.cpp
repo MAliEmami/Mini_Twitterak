@@ -2,6 +2,9 @@
 #include <iostream>
 #include <vector>
 #include <unordered_map>
+#include <fstream>
+#include <string>
+#include <sstream>
 
 using namespace std;
 
@@ -11,6 +14,30 @@ void User::saveData(unordered_map<string, string>& userData)
 {
     userData[username] = password ;
 }
+
+// save the users data to file
+void User::saveDataToFile(unordered_map<string, string>& userDate ,string fileName) 
+{
+    ofstream file(fileName + ".txt");
+    for (const auto& pair : userDate) 
+    {
+        file << pair.first << " " << pair.second << "\n";
+    }
+}
+
+// unordered_map<string, string> loadData(string fileName) 
+// {
+//     unordered_map<string, string> userDate;
+//     ifstream file(fileName + ".txt");
+//     string username, password;
+    
+//     while (file >> username >> password) 
+//     {
+//         userDate[username] = password;
+//     }
+
+//     return userDate;
+// }
 
 void PersonalUser::signUp() 
 {

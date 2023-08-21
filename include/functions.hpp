@@ -5,7 +5,7 @@
 #include <unordered_map>
 #include <vector>
 
-using namespace std ;
+using namespace std;
 
 void lowerCase(std::string &str);// every command should be lowercase
 
@@ -18,7 +18,7 @@ bool validateBiography(const string& paragraph);
 bool validateUsername(const std::string& input); 
 
 void updateInformation(unordered_map<string, string>& users, const string& username, const string& newPassword);
-void saveData(const unordered_map<string, string>& users ,string fileName);
+//void saveDataToFile(const unordered_map<string, string>& users ,string fileName);
 unordered_map<string, string> loadData(string fileName);// i dont know
 
 

@@ -1,9 +1,11 @@
 #ifndef SIGNUP_HPP
 #define SIGNUP_HPP
 
-#include <string>
 #include <unordered_map>
 #include <vector>
+#include <fstream>
+#include <string>
+#include <sstream>
 
 class User 
 {
@@ -13,6 +15,9 @@ public:
 
     virtual void signUp() = 0;
     void saveData(std::unordered_map<std::string, std::string>& userData);
+    void saveDataToFile(std::unordered_map<std::string, std::string>& userDate ,std::string fileName);
+
+    //std::unordered_map<std::string, std::string> loadData(std::string& fileName);
 
     std::string userType;
     std::string username;
