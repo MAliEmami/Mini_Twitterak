@@ -27,6 +27,8 @@ class twitterak
         //bool login(const std::unordered_map<std::string, std::string>& userData);
 
         std::unordered_map<std::string, std::string> userData;
+        // std::unordered_map<std::string, std::string> userTweet;
+
 
 
     private:

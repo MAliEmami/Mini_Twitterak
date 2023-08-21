@@ -11,9 +11,10 @@
 #include <algorithm>
 
 // void displayTweetMnue();
-//std::unordered_map<std::string, std::string> userTweet;
 
-//void tweetCreator(unordered_map<string, string>& userTweet, string username);
+std::unordered_map<std::string, std::string> userTweet;
+
+void tweetCreator(std::string tweet, std::string username);
 
 
 

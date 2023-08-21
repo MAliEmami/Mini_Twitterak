@@ -10,13 +10,10 @@
 
 using namespace std;
 
-void tweetCreator(unordered_map<string, string>& userTweet, string username)
-{
-    string tweet;
-    cout << "Enter tweet: ";
-    getline(cin, tweet);
-    cout <<'\n';
+unordered_map<string, string> userTweet;
 
+void tweetCreator(string tweet, string username)
+{
     int tweetNumber = count(userTweet[username].begin(), userTweet[username].end(), '\n') + 1;
     userTweet[username] += (to_string(tweetNumber) + ". " + tweet + "\n");
 

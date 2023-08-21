@@ -268,7 +268,7 @@ void twitterak::displayInToAppTweetMnue(string usernameInToApp)
     cout << '\n' << "<Tweet>" << '\n' << "<Retweet>" << '\n' << "Quote Tweet" << '\n' /*<< "Like" << '\n' << "<Mention>"*/ ;
     //should display file
 
-    //unordered_map<string, string> userTweet;
+    // unordered_map<string, string> userTweet;
     
     string command = "";
     cin >> command;
@@ -277,7 +277,11 @@ void twitterak::displayInToAppTweetMnue(string usernameInToApp)
     {
         if (command == "tweet")
         {
-            //tweetCreator(unordered_map<string, string>& userTweet, string usernameInToApp);
+            string tweet;
+            cout << "Enter tweet: ";
+            getline(cin, tweet);
+            cout <<'\n';
+            tweetCreator(string tweet, string usernameInToApp);
         }
         else if (command == "quote tweet")
         {
