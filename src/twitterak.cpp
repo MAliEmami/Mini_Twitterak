@@ -5,7 +5,7 @@
 #include "signup.hpp"
 #include "signin.hpp"
 #include "functions.hpp"
-#include "tweet.hpp"
+// #include "tweet.hpp"
 #include "sha256.h"
 #include <fstream>
 #include <sstream>
@@ -268,7 +268,6 @@ void twitterak::displayInToAppTweetMnue(string usernameInToApp)
     cout << '\n' << "<Tweet>" << '\n' << "<Retweet>" << '\n' << "Quote Tweet" << '\n' /*<< "Like" << '\n' << "<Mention>"*/ ;
     //should display file
 
-    // unordered_map<string, string> userTweet;
     
     string command = "";
     cin >> command;
@@ -281,7 +280,7 @@ void twitterak::displayInToAppTweetMnue(string usernameInToApp)
             cout << "Enter tweet: ";
             getline(cin, tweet);
             cout <<'\n';
-            tweetCreator(string tweet, string usernameInToApp);
+            tweetCreator(tweet,usernameInToApp);
         }
         else if (command == "quote tweet")
         {

@@ -155,4 +155,11 @@ CMakeFiles/app.dir/src/functions.cpp.obj: \
  D:/lessons/Project/Final/Twitterak_Final/include/twitterak.hpp \
  D:/lessons/Project/Final/Twitterak_Final/include/signup.hpp \
  D:/lessons/Project/Final/Twitterak_Final/include/signin.hpp \
- D:/lessons/Project/Final/Twitterak_Final/include/functions.hpp
+ D:/lessons/Project/Final/Twitterak_Final/include/functions.hpp \
+ D:/lessons/Project/Final/Twitterak_Final/include/tweet.hpp \
+ C:/msys64/mingw64/include/c++/12.2.0/algorithm \
+ C:/msys64/mingw64/include/c++/12.2.0/bits/stl_algo.h \
+ C:/msys64/mingw64/include/c++/12.2.0/bits/algorithmfwd.h \
+ C:/msys64/mingw64/include/c++/12.2.0/bits/stl_heap.h \
+ C:/msys64/mingw64/include/c++/12.2.0/bits/stl_tempbuf.h \
+ C:/msys64/mingw64/include/c++/12.2.0/bits/uniform_int_dist.h

@@ -1,4 +1,5 @@
 #include "signup.hpp"
+#include "tweet.hpp"
 #include <iostream>
 #include <vector>
 #include <unordered_map>

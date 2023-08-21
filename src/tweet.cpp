@@ -10,7 +10,6 @@
 
 using namespace std;
 
-unordered_map<string, string> userTweet;
 
 void tweetCreator(string tweet, string username)
 {

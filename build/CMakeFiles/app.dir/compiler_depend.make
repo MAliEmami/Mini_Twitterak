@@ -163,7 +163,14 @@ CMakeFiles/app.dir/src/functions.cpp.obj: D:/lessons/Project/Final/Twitterak_Fin
   D:/lessons/Project/Final/Twitterak_Final/include/twitterak.hpp \
   D:/lessons/Project/Final/Twitterak_Final/include/signup.hpp \
   D:/lessons/Project/Final/Twitterak_Final/include/signin.hpp \
-  D:/lessons/Project/Final/Twitterak_Final/include/functions.hpp
+  D:/lessons/Project/Final/Twitterak_Final/include/functions.hpp \
+  D:/lessons/Project/Final/Twitterak_Final/include/tweet.hpp \
+  C:/msys64/mingw64/include/c++/12.2.0/algorithm \
+  C:/msys64/mingw64/include/c++/12.2.0/bits/stl_algo.h \
+  C:/msys64/mingw64/include/c++/12.2.0/bits/algorithmfwd.h \
+  C:/msys64/mingw64/include/c++/12.2.0/bits/stl_heap.h \
+  C:/msys64/mingw64/include/c++/12.2.0/bits/stl_tempbuf.h \
+  C:/msys64/mingw64/include/c++/12.2.0/bits/uniform_int_dist.h
 
 CMakeFiles/app.dir/src/main.cpp.obj: D:/lessons/Project/Final/Twitterak_Final/src/main.cpp \
   D:/lessons/Project/Final/Twitterak_Final/include/twitterak.hpp \
@@ -325,9 +332,17 @@ CMakeFiles/app.dir/src/main.cpp.obj: D:/lessons/Project/Final/Twitterak_Final/sr
   D:/lessons/Project/Final/Twitterak_Final/include/signin.hpp \
   C:/msys64/mingw64/include/c++/12.2.0/iostream \
   D:/lessons/Project/Final/Twitterak_Final/include/functions.hpp \
+  D:/lessons/Project/Final/Twitterak_Final/include/tweet.hpp \
+  C:/msys64/mingw64/include/c++/12.2.0/algorithm \
+  C:/msys64/mingw64/include/c++/12.2.0/bits/stl_algo.h \
+  C:/msys64/mingw64/include/c++/12.2.0/bits/algorithmfwd.h \
+  C:/msys64/mingw64/include/c++/12.2.0/bits/stl_heap.h \
+  C:/msys64/mingw64/include/c++/12.2.0/bits/stl_tempbuf.h \
+  C:/msys64/mingw64/include/c++/12.2.0/bits/uniform_int_dist.h \
   D:/lessons/Project/Final/Twitterak_Final/include/signup.hpp \
   D:/lessons/Project/Final/Twitterak_Final/include/signin.hpp \
-  D:/lessons/Project/Final/Twitterak_Final/include/functions.hpp
+  D:/lessons/Project/Final/Twitterak_Final/include/functions.hpp \
+  D:/lessons/Project/Final/Twitterak_Final/include/tweet.hpp
 
 CMakeFiles/app.dir/src/signin.cpp.obj: D:/lessons/Project/Final/Twitterak_Final/src/signin.cpp \
   D:/lessons/Project/Final/Twitterak_Final/include/signin.hpp \
@@ -489,6 +504,13 @@ CMakeFiles/app.dir/src/signin.cpp.obj: D:/lessons/Project/Final/Twitterak_Final/
   C:/msys64/mingw64/include/c++/12.2.0/sstream \
   C:/msys64/mingw64/include/c++/12.2.0/bits/sstream.tcc \
   D:/lessons/Project/Final/Twitterak_Final/include/signin.hpp \
+  D:/lessons/Project/Final/Twitterak_Final/include/tweet.hpp \
+  C:/msys64/mingw64/include/c++/12.2.0/algorithm \
+  C:/msys64/mingw64/include/c++/12.2.0/bits/stl_algo.h \
+  C:/msys64/mingw64/include/c++/12.2.0/bits/algorithmfwd.h \
+  C:/msys64/mingw64/include/c++/12.2.0/bits/stl_heap.h \
+  C:/msys64/mingw64/include/c++/12.2.0/bits/stl_tempbuf.h \
+  C:/msys64/mingw64/include/c++/12.2.0/bits/uniform_int_dist.h \
   D:/lessons/Project/Final/Twitterak_Final/include/twitterak.hpp
 
 CMakeFiles/app.dir/src/signup.cpp.obj: D:/lessons/Project/Final/Twitterak_Final/src/signup.cpp \
@@ -646,7 +668,19 @@ CMakeFiles/app.dir/src/signup.cpp.obj: D:/lessons/Project/Final/Twitterak_Final/
   C:/msys64/mingw64/include/c++/12.2.0/bits/fstream.tcc \
   C:/msys64/mingw64/include/c++/12.2.0/sstream \
   C:/msys64/mingw64/include/c++/12.2.0/bits/sstream.tcc \
-  C:/msys64/mingw64/include/c++/12.2.0/iostream
+  D:/lessons/Project/Final/Twitterak_Final/include/tweet.hpp \
+  C:/msys64/mingw64/include/c++/12.2.0/iostream \
+  D:/lessons/Project/Final/Twitterak_Final/include/twitterak.hpp \
+  D:/lessons/Project/Final/Twitterak_Final/include/signup.hpp \
+  D:/lessons/Project/Final/Twitterak_Final/include/signin.hpp \
+  D:/lessons/Project/Final/Twitterak_Final/include/functions.hpp \
+  D:/lessons/Project/Final/Twitterak_Final/include/tweet.hpp \
+  C:/msys64/mingw64/include/c++/12.2.0/algorithm \
+  C:/msys64/mingw64/include/c++/12.2.0/bits/stl_algo.h \
+  C:/msys64/mingw64/include/c++/12.2.0/bits/algorithmfwd.h \
+  C:/msys64/mingw64/include/c++/12.2.0/bits/stl_heap.h \
+  C:/msys64/mingw64/include/c++/12.2.0/bits/stl_tempbuf.h \
+  C:/msys64/mingw64/include/c++/12.2.0/bits/uniform_int_dist.h
 
 CMakeFiles/app.dir/src/tweet.cpp.obj: D:/lessons/Project/Final/Twitterak_Final/src/tweet.cpp \
   C:/msys64/mingw64/include/c++/12.2.0/iostream \
@@ -814,6 +848,7 @@ CMakeFiles/app.dir/src/tweet.cpp.obj: D:/lessons/Project/Final/Twitterak_Final/s
   C:/msys64/mingw64/include/c++/12.2.0/bits/sstream.tcc \
   D:/lessons/Project/Final/Twitterak_Final/include/signin.hpp \
   D:/lessons/Project/Final/Twitterak_Final/include/functions.hpp \
+  D:/lessons/Project/Final/Twitterak_Final/include/tweet.hpp \
   D:/lessons/Project/Final/Twitterak_Final/include/signup.hpp \
   D:/lessons/Project/Final/Twitterak_Final/include/signin.hpp \
   D:/lessons/Project/Final/Twitterak_Final/include/functions.hpp \
@@ -979,9 +1014,6 @@ CMakeFiles/app.dir/src/twitterak.cpp.obj: D:/lessons/Project/Final/Twitterak_Fin
   C:/msys64/mingw64/include/c++/12.2.0/bits/sstream.tcc \
   D:/lessons/Project/Final/Twitterak_Final/include/signin.hpp \
   D:/lessons/Project/Final/Twitterak_Final/include/functions.hpp \
-  D:/lessons/Project/Final/Twitterak_Final/include/signup.hpp \
-  D:/lessons/Project/Final/Twitterak_Final/include/signin.hpp \
-  D:/lessons/Project/Final/Twitterak_Final/include/functions.hpp \
   D:/lessons/Project/Final/Twitterak_Final/include/tweet.hpp \
   C:/msys64/mingw64/include/c++/12.2.0/algorithm \
   C:/msys64/mingw64/include/c++/12.2.0/bits/stl_algo.h \
@@ -989,6 +1021,9 @@ CMakeFiles/app.dir/src/twitterak.cpp.obj: D:/lessons/Project/Final/Twitterak_Fin
   C:/msys64/mingw64/include/c++/12.2.0/bits/stl_heap.h \
   C:/msys64/mingw64/include/c++/12.2.0/bits/stl_tempbuf.h \
   C:/msys64/mingw64/include/c++/12.2.0/bits/uniform_int_dist.h \
+  D:/lessons/Project/Final/Twitterak_Final/include/signup.hpp \
+  D:/lessons/Project/Final/Twitterak_Final/include/signin.hpp \
+  D:/lessons/Project/Final/Twitterak_Final/include/functions.hpp \
   D:/lessons/Project/Final/Twitterak_Final/hash-library-master/sha256.h
 
 
@@ -1318,13 +1353,7 @@ C:/msys64/mingw64/include/c++/12.2.0/unordered_map:
 
 D:/lessons/Project/Final/Twitterak_Final/include/signin.hpp:
 
-D:/lessons/Project/Final/Twitterak_Final/src/main.cpp:
-
-D:/lessons/Project/Final/Twitterak_Final/src/signin.cpp:
-
-D:/lessons/Project/Final/Twitterak_Final/src/signup.cpp:
-
-D:/lessons/Project/Final/Twitterak_Final/src/tweet.cpp:
+D:/lessons/Project/Final/Twitterak_Final/include/tweet.hpp:
 
 C:/msys64/mingw64/include/c++/12.2.0/algorithm:
 
@@ -1336,6 +1365,12 @@ C:/msys64/mingw64/include/c++/12.2.0/bits/stl_tempbuf.h:
 
 C:/msys64/mingw64/include/c++/12.2.0/bits/uniform_int_dist.h:
 
-D:/lessons/Project/Final/Twitterak_Final/include/tweet.hpp:
+D:/lessons/Project/Final/Twitterak_Final/src/main.cpp:
+
+D:/lessons/Project/Final/Twitterak_Final/src/signin.cpp:
+
+D:/lessons/Project/Final/Twitterak_Final/src/signup.cpp:
+
+D:/lessons/Project/Final/Twitterak_Final/src/tweet.cpp:
 
 D:/lessons/Project/Final/Twitterak_Final/src/twitterak.cpp:
