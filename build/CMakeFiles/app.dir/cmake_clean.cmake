@@ -1,10 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/app.dir/src/functions.cpp.obj"
-  "CMakeFiles/app.dir/src/functions.cpp.obj.d"
   "CMakeFiles/app.dir/src/main.cpp.obj"
   "CMakeFiles/app.dir/src/main.cpp.obj.d"
-  "CMakeFiles/app.dir/src/signin.cpp.obj"
-  "CMakeFiles/app.dir/src/signin.cpp.obj.d"
   "CMakeFiles/app.dir/src/signup.cpp.obj"
   "CMakeFiles/app.dir/src/signup.cpp.obj.d"
   "CMakeFiles/app.dir/src/tweet.cpp.obj"

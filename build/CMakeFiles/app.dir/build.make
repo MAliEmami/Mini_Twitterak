@@ -98,26 +98,11 @@ CMakeFiles/app.dir/src/twitterak.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/app.dir/src/twitterak.cpp.s"
 	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\lessons\Project\Final\Twitterak_Final\src\twitterak.cpp -o CMakeFiles\app.dir\src\twitterak.cpp.s
 
-CMakeFiles/app.dir/src/functions.cpp.obj: CMakeFiles/app.dir/flags.make
-CMakeFiles/app.dir/src/functions.cpp.obj: CMakeFiles/app.dir/includes_CXX.rsp
-CMakeFiles/app.dir/src/functions.cpp.obj: D:/lessons/Project/Final/Twitterak_Final/src/functions.cpp
-CMakeFiles/app.dir/src/functions.cpp.obj: CMakeFiles/app.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\lessons\Project\Final\Twitterak_Final\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/app.dir/src/functions.cpp.obj"
-	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/app.dir/src/functions.cpp.obj -MF CMakeFiles\app.dir\src\functions.cpp.obj.d -o CMakeFiles\app.dir\src\functions.cpp.obj -c D:\lessons\Project\Final\Twitterak_Final\src\functions.cpp
-
-CMakeFiles/app.dir/src/functions.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/app.dir/src/functions.cpp.i"
-	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\lessons\Project\Final\Twitterak_Final\src\functions.cpp > CMakeFiles\app.dir\src\functions.cpp.i
-
-CMakeFiles/app.dir/src/functions.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/app.dir/src/functions.cpp.s"
-	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\lessons\Project\Final\Twitterak_Final\src\functions.cpp -o CMakeFiles\app.dir\src\functions.cpp.s
-
 CMakeFiles/app.dir/src/signup.cpp.obj: CMakeFiles/app.dir/flags.make
 CMakeFiles/app.dir/src/signup.cpp.obj: CMakeFiles/app.dir/includes_CXX.rsp
 CMakeFiles/app.dir/src/signup.cpp.obj: D:/lessons/Project/Final/Twitterak_Final/src/signup.cpp
 CMakeFiles/app.dir/src/signup.cpp.obj: CMakeFiles/app.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\lessons\Project\Final\Twitterak_Final\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/app.dir/src/signup.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\lessons\Project\Final\Twitterak_Final\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/app.dir/src/signup.cpp.obj"
 	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/app.dir/src/signup.cpp.obj -MF CMakeFiles\app.dir\src\signup.cpp.obj.d -o CMakeFiles\app.dir\src\signup.cpp.obj -c D:\lessons\Project\Final\Twitterak_Final\src\signup.cpp
 
 CMakeFiles/app.dir/src/signup.cpp.i: cmake_force
@@ -128,26 +113,11 @@ CMakeFiles/app.dir/src/signup.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/app.dir/src/signup.cpp.s"
 	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\lessons\Project\Final\Twitterak_Final\src\signup.cpp -o CMakeFiles\app.dir\src\signup.cpp.s
 
-CMakeFiles/app.dir/src/signin.cpp.obj: CMakeFiles/app.dir/flags.make
-CMakeFiles/app.dir/src/signin.cpp.obj: CMakeFiles/app.dir/includes_CXX.rsp
-CMakeFiles/app.dir/src/signin.cpp.obj: D:/lessons/Project/Final/Twitterak_Final/src/signin.cpp
-CMakeFiles/app.dir/src/signin.cpp.obj: CMakeFiles/app.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\lessons\Project\Final\Twitterak_Final\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/app.dir/src/signin.cpp.obj"
-	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/app.dir/src/signin.cpp.obj -MF CMakeFiles\app.dir\src\signin.cpp.obj.d -o CMakeFiles\app.dir\src\signin.cpp.obj -c D:\lessons\Project\Final\Twitterak_Final\src\signin.cpp
-
-CMakeFiles/app.dir/src/signin.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/app.dir/src/signin.cpp.i"
-	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\lessons\Project\Final\Twitterak_Final\src\signin.cpp > CMakeFiles\app.dir\src\signin.cpp.i
-
-CMakeFiles/app.dir/src/signin.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/app.dir/src/signin.cpp.s"
-	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\lessons\Project\Final\Twitterak_Final\src\signin.cpp -o CMakeFiles\app.dir\src\signin.cpp.s
-
 CMakeFiles/app.dir/src/tweet.cpp.obj: CMakeFiles/app.dir/flags.make
 CMakeFiles/app.dir/src/tweet.cpp.obj: CMakeFiles/app.dir/includes_CXX.rsp
 CMakeFiles/app.dir/src/tweet.cpp.obj: D:/lessons/Project/Final/Twitterak_Final/src/tweet.cpp
 CMakeFiles/app.dir/src/tweet.cpp.obj: CMakeFiles/app.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\lessons\Project\Final\Twitterak_Final\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/app.dir/src/tweet.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\lessons\Project\Final\Twitterak_Final\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/app.dir/src/tweet.cpp.obj"
 	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/app.dir/src/tweet.cpp.obj -MF CMakeFiles\app.dir\src\tweet.cpp.obj.d -o CMakeFiles\app.dir\src\tweet.cpp.obj -c D:\lessons\Project\Final\Twitterak_Final\src\tweet.cpp
 
 CMakeFiles/app.dir/src/tweet.cpp.i: cmake_force
@@ -162,9 +132,7 @@ CMakeFiles/app.dir/src/tweet.cpp.s: cmake_force
 app_OBJECTS = \
 "CMakeFiles/app.dir/src/main.cpp.obj" \
 "CMakeFiles/app.dir/src/twitterak.cpp.obj" \
-"CMakeFiles/app.dir/src/functions.cpp.obj" \
 "CMakeFiles/app.dir/src/signup.cpp.obj" \
-"CMakeFiles/app.dir/src/signin.cpp.obj" \
 "CMakeFiles/app.dir/src/tweet.cpp.obj"
 
 # External object files for target app
@@ -172,15 +140,13 @@ app_EXTERNAL_OBJECTS =
 
 app.exe: CMakeFiles/app.dir/src/main.cpp.obj
 app.exe: CMakeFiles/app.dir/src/twitterak.cpp.obj
-app.exe: CMakeFiles/app.dir/src/functions.cpp.obj
 app.exe: CMakeFiles/app.dir/src/signup.cpp.obj
-app.exe: CMakeFiles/app.dir/src/signin.cpp.obj
 app.exe: CMakeFiles/app.dir/src/tweet.cpp.obj
 app.exe: CMakeFiles/app.dir/build.make
 app.exe: CMakeFiles/app.dir/linkLibs.rsp
 app.exe: CMakeFiles/app.dir/objects1.rsp
 app.exe: CMakeFiles/app.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\lessons\Project\Final\Twitterak_Final\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable app.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\lessons\Project\Final\Twitterak_Final\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable app.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\app.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

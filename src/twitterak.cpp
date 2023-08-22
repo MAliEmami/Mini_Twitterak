@@ -278,7 +278,7 @@ void twitterak::displayInToAppTweetMnue(string usernameInToApp)
             cout << "Enter tweet: ";
             getline(cin, tweet);
             cout <<'\n';
-            tweetCreator(tweet,usernameInToApp);
+            //tweet::tweetCreator(tweet,usernameInToApp);
         }
         else if (command == "quote tweet")
         {

@@ -2,7 +2,6 @@
 #include "twitterak.hpp"
 #include "signup.hpp"
 #include "signin.hpp"
-#include "functions.hpp"
 #include "tweet.hpp"
 
 int main()

@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
 project(Twitterak_Final)
 set(CMAKE_CXX_STANDARD 11)
-include_directories(include/ twitterak.hpp signin.hpp signup.hpp functions.hpp tweet.hpp)
-add_executable(app ./src/main.cpp ./src/twitterak.cpp ./src/functions.cpp ./src/signup.cpp ./src/signin.cpp ./src/tweet.cpp)
+include_directories(include/ twitterak.hpp signup.hpp functions.hpp tweet.hpp)
+add_executable(app ./src/main.cpp ./src/twitterak.cpp ./src/signup.cpp ./src/tweet.cpp)

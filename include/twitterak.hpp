@@ -4,7 +4,6 @@
 #include <iostream>
 #include "signup.hpp"
 #include "signin.hpp"
-#include "functions.hpp"
 
 class twitterak
 {
@@ -23,12 +22,6 @@ class twitterak
 
         std::unordered_map<std::string, std::string> userData;
         std::unordered_map<std::string, std::string> userAllData;
-
-        //bool login(const std::unordered_map<std::string, std::string>& userData);
-
-
-    private:
-       // std::unordered_map<std::string , user> users;
 
 };
 

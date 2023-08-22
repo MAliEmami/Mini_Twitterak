@@ -151,10 +151,8 @@ CMakeFiles/app.dir/src/main.cpp.obj: \
  C:/msys64/mingw64/include/c++/12.2.0/sstream \
  C:/msys64/mingw64/include/c++/12.2.0/bits/sstream.tcc \
  D:/lessons/Project/Final/Twitterak_Final/include/signin.hpp \
- D:/lessons/Project/Final/Twitterak_Final/include/functions.hpp \
  D:/lessons/Project/Final/Twitterak_Final/include/signup.hpp \
  D:/lessons/Project/Final/Twitterak_Final/include/signin.hpp \
- D:/lessons/Project/Final/Twitterak_Final/include/functions.hpp \
  D:/lessons/Project/Final/Twitterak_Final/include/tweet.hpp \
  D:/lessons/Project/Final/Twitterak_Final/include/twitterak.hpp \
  C:/msys64/mingw64/include/c++/12.2.0/algorithm \

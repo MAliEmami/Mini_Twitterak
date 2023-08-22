@@ -7,14 +7,13 @@
 #include "twitterak.hpp"
 #include "signup.hpp"
 #include "signin.hpp"
-#include "functions.hpp"
 #include <algorithm>
 
 class tweet
 {
     public:
 
-    unordered_map<std::string, std::string> userTweet;
+    std::unordered_map<std::string, std::string> userTweet;
 
     void tweetCreator(std::string tweet, std::string username);
 

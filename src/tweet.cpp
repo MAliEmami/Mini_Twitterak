@@ -4,13 +4,12 @@
 #include <algorithm>
 #include "signup.hpp"
 #include "signin.hpp"
-#include "functions.hpp"
 #include "tweet.hpp"
 
 using namespace std;
 
 
-void tweet::tweetCreator(string tweet, string username)
+void tweet::tweetCreator(string tweet, string username) // to tweeting
 {
     int tweetNumber = count(userTweet[username].begin(), userTweet[username].end(), '\n') + 1;
     userTweet[username] += (to_string(tweetNumber) + ". " + tweet + "\n");

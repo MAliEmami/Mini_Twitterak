@@ -128,30 +128,6 @@ app/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/build
 .PHONY : app/fast
 
-src/functions.obj: src/functions.cpp.obj
-.PHONY : src/functions.obj
-
-# target to build an object file
-src/functions.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/functions.cpp.obj
-.PHONY : src/functions.cpp.obj
-
-src/functions.i: src/functions.cpp.i
-.PHONY : src/functions.i
-
-# target to preprocess a source file
-src/functions.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/functions.cpp.i
-.PHONY : src/functions.cpp.i
-
-src/functions.s: src/functions.cpp.s
-.PHONY : src/functions.s
-
-# target to generate assembly for a file
-src/functions.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/functions.cpp.s
-.PHONY : src/functions.cpp.s
-
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
 
@@ -175,30 +151,6 @@ src/main.s: src/main.cpp.s
 src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
-
-src/signin.obj: src/signin.cpp.obj
-.PHONY : src/signin.obj
-
-# target to build an object file
-src/signin.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/signin.cpp.obj
-.PHONY : src/signin.cpp.obj
-
-src/signin.i: src/signin.cpp.i
-.PHONY : src/signin.i
-
-# target to preprocess a source file
-src/signin.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/signin.cpp.i
-.PHONY : src/signin.cpp.i
-
-src/signin.s: src/signin.cpp.s
-.PHONY : src/signin.s
-
-# target to generate assembly for a file
-src/signin.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make CMakeFiles/app.dir/src/signin.cpp.s
-.PHONY : src/signin.cpp.s
 
 src/signup.obj: src/signup.cpp.obj
 .PHONY : src/signup.obj
@@ -281,15 +233,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... app
-	@echo ... src/functions.obj
-	@echo ... src/functions.i
-	@echo ... src/functions.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
-	@echo ... src/signin.obj
-	@echo ... src/signin.i
-	@echo ... src/signin.s
 	@echo ... src/signup.obj
 	@echo ... src/signup.i
 	@echo ... src/signup.s
